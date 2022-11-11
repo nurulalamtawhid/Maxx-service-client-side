@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import ServiceCard from '../ServiceCard/ServiceCard';
 
 const HomeServices = () => {
@@ -27,7 +28,9 @@ const HomeServices = () => {
              
             </div>
                 <div className='flex items-center justify-center py-3'>
-                <button type="button" className="d-flex items-center justify-center w-1/5   p-3 font-semibold tracking-wide rounded-md bg-indigo-400 text-gray-50">See All</button>
+                <Link to='/services' className=' text-gray-50 no-underline'>
+                <button type="button" className="d-flex items-center justify-center p-3 font-semibold tracking-wide rounded-md bg-indigo-400">See All</button>
+                </Link>
                 </div>
            </Container>
         </div>
