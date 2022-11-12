@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = () => {
     return (
-        <div>
+        <div style={{position :"relative"}}>
             <h1>This about</h1>
         </div>
     );

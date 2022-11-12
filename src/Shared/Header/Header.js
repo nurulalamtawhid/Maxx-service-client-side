@@ -37,9 +37,9 @@ const Header = () => {
             
           </Nav>
           <Nav>
-            <Nav.Link href="#deets" className=''>LogIn</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              SignUp
+            <Nav.Link href="" className=''><Link to='/login'>LogIn</Link></Nav.Link>
+            <Nav.Link eventKey={2} href="">
+              <Link to ='/register' >SignUp</Link>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

@@ -11,11 +11,11 @@ const Services = () => {
         .then(data=>setServices(data))
     })
     return (
-        <Container>
+        <Container >
             <div>
             <h1 className='text-2xl text-center'>Maxx services has : {services.length} service</h1>
             </div>
-            <div className='grid gap-2 lg:grid-cols-3 md:grid-cols-2 py-2'>
+            <div className='grid gap-2 mb-16 lg:grid-cols-3 md:grid-cols-2 py-2 '>
             {
                 services.map(service =><ServiceCard
                 
