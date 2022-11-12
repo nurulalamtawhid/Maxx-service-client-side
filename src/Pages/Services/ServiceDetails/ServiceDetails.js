@@ -28,7 +28,7 @@ const ServiceDetails = () => {
                         </p>
                         <p>Price:${price}</p>
                     </div>
-                   <button type="button" className="flex items-center justify-center w-full p-3 font-semibold tracking-wide rounded-md bg-indigo-400 text-gray-50">view-details</button>
+                 
                 </div>
             </div>
             </div>
