@@ -1,13 +1,23 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button, Container } from 'react-bootstrap';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link, useLoaderData } from 'react-router-dom';
+import ReviewCard from '../../Reviews/ReviewCard/ReviewCard';
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData();
    // console.log(serviceDetails);
     const {_id,image_url,title,details,price} = serviceDetails;
+    const [reviews,setreviews] = useState([]);
+    //const [control,setcontrol] = useState(true)
+    useEffect(()=>{
+        fetch(`http://localhost:5000/serviceReview/${_id}`)
+        .then(res=>res.json())
+        .then(data=>setreviews(data))
+        
+
+    },[]);
     return (
        <Container>
          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
@@ -31,17 +41,22 @@ const ServiceDetails = () => {
                         </p>
                         <p>Price:${price}</p>
                     </div>
-                 
+                    <Link to={`/reviewcheckout/${_id}`}>
+           <Button variant='outline-info'>Add review</Button>
+           </Link>
                 </div>
                 
             </div>
             </div>
-           <div>
-           <h1>reviews</h1>
-            <h2>reviews 2</h2>
-           <Link to={`/reviewcheckout/${_id}`}>
-           <Button variant='outline-info'>Add review</Button>
-           </Link>
+           <div className='mb-16'>
+            {
+                reviews.map(review=><ReviewCard
+                       key={review._id}
+                       review ={review} 
+                    
+                ></ReviewCard>)
+            }
+          
            </div>
         </div>
         

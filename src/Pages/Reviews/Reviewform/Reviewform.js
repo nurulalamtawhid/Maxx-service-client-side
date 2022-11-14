@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useLoaderData } from 'react-router-dom';
 import { Authcontext } from '../../../Context/Authprovider';
@@ -7,6 +7,8 @@ const Reviewform = () => {
     const serviceDetails = useLoaderData();
     const { _id, image_url, title } = serviceDetails;
     const { user } = useContext(Authcontext);
+    const [review,setreview] = useState([]);
+    const [control,setcontrol] = useState(false)
     const handleAddreview = (event) => {
         event.preventDefault();
         const form = event.target;
@@ -19,6 +21,8 @@ const Reviewform = () => {
             serviceName: title,
             Customer: name,
             Review : review,
+            photo : user?.photoURL,
+
             email
 
         };
@@ -33,6 +37,7 @@ const Reviewform = () => {
             .then(data => {
                 console.log(data)
                 if (data.acknowledged) {
+                    setcontrol(!control)
                     alert('Review Added succcessfully')
                     form.reset()
                 }
@@ -44,9 +49,11 @@ const Reviewform = () => {
     useEffect(()=>{
         fetch(`http://localhost:5000/serviceReview/${_id}`)
         .then(res=>res.json())
-        .then(data=>console.log(data))
+        .then(data=>setreview(data))
+        
 
-    },[]);
+    },[control]);
+    console.log(review);
 
 
 return (
