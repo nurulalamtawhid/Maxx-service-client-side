@@ -19,6 +19,7 @@ const Login = () => {
         login(email,password)
         .then(result =>{
             const user = result.user;
+            console.log(user);
             const currentuser ={
                 email :user.email
             }
@@ -59,7 +60,7 @@ const Login = () => {
                 </div>
                 <Button type="submit" className=" lg:px-4  font-semibold rounded-full bg-indigo-500 text-gray-100">Login</Button>
                 
-                <Button  onClick={ handleGoogleSignIn} variant="outline-secondary" className="mx-2 font-semibold rounded-full text-gray-100 d-flex align-items-center sm:flex-col "><FaGoogle></FaGoogle>Google logIn</Button>
+                <Button  onClick={ handleGoogleSignIn}  variant="outline-secondary" className="mx-2 font-semibold rounded-full text-gray-100 d-flex align-items-center sm:flex-col "><FaGoogle></FaGoogle>Google logIn</Button>
                 <p><Link to ={'/register'} className="mt-4"> want to register</Link></p>
             </fieldset>
 

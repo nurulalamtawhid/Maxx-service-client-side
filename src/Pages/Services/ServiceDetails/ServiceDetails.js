@@ -1,16 +1,19 @@
 import React from 'react';
+import { Button, Container } from 'react-bootstrap';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 
 const ServiceDetails = () => {
     const serviceDetails = useLoaderData();
-    console.log(serviceDetails);
+   // console.log(serviceDetails);
     const {_id,image_url,title,details,price} = serviceDetails;
     return (
-        <div>
+       <Container>
+         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2'>
+         
             <div>
-            <div className="max-w-xs rounded-md shadow-md bg-gray-50 text-gray-800">
+            <div className="max-w-xs rounded-md shadow-md py-3 bg-gray-50 text-gray-800">
                 <PhotoProvider>
                 <PhotoView src={image_url}>
                 <img src={image_url} style={{ objectFit: 'cover' }} alt="" className="object-cover object-center w-full rounded-t-md h-72 bg-gray-500" />
@@ -30,10 +33,19 @@ const ServiceDetails = () => {
                     </div>
                  
                 </div>
+                
             </div>
             </div>
-            
+           <div>
+           <h1>reviews</h1>
+            <h2>reviews 2</h2>
+           <Link to={`/reviewcheckout/${_id}`}>
+           <Button variant='outline-info'>Add review</Button>
+           </Link>
+           </div>
         </div>
+        
+       </Container>
     );
 };
 

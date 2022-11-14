@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import logo from '../../Asset/logo/cover3.png';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
@@ -7,8 +7,16 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 import Image from 'react-bootstrap/Image';
 
 import { Link } from 'react-router-dom';
+import { Authcontext } from '../../Context/Authprovider';
+import { Button } from 'react-bootstrap';
 
 const Header = () => {
+  const {user,logout} = useContext(Authcontext);
+  const handleLogout =()=>{
+    logout()
+    .then()
+    .catch()
+  }
     return (
         <div>
     <Navbar collapseOnSelect expand="lg" className='bg-indigo-100' >
@@ -34,13 +42,27 @@ const Header = () => {
             <Nav.Link href="">
               <Link to='/services' className='text-black no-underline'>Services</Link>
             </Nav.Link>
+            </Nav>
+            <Nav>
+            {
+              user?.email?
+              <>
+              <Nav.Link href=""><Link to='/myreviews' className='text-black no-underline'>Myreviews</Link></Nav.Link>
+              <Nav.Link href=""><Link to='/myreviews' className='text-black no-underline'>AddService</Link></Nav.Link>
+              <Button variant="outline-dark" onClick={handleLogout}>LogOut</Button>
+              </>
+              :
+              <Nav>
+              <Nav.Link href="" className=''><Link to='/login'>LogIn</Link></Nav.Link>
+              <Nav.Link eventKey={2} href="">
+                <Link to ='/register' >SignUp</Link>
+              </Nav.Link>
+              </Nav>
+            }
             
-          </Nav>
-          <Nav>
-            <Nav.Link href="" className=''><Link to='/login'>LogIn</Link></Nav.Link>
-            <Nav.Link eventKey={2} href="">
-              <Link to ='/register' >SignUp</Link>
-            </Nav.Link>
+          
+          
+           
           </Nav>
         </Navbar.Collapse>
       </Container>
