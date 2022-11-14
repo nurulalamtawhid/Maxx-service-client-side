@@ -1,10 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../../Context/Authprovider';
 
 const Reviewform = () => {
     const serviceDetails = useLoaderData();
+    const navigate = useNavigate();
     const { _id, image_url, title } = serviceDetails;
     const { user } = useContext(Authcontext);
     const [review,setreview] = useState([]);
@@ -40,6 +41,7 @@ const Reviewform = () => {
                     setcontrol(!control)
                     alert('Review Added succcessfully')
                     form.reset()
+                    navigate('/services')
                 }
 
             })

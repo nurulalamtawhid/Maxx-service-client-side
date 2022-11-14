@@ -4,7 +4,9 @@ import Main from "../../Layout/Main";
 import Home from "../../Pages/Home/Home";
 import Login from "../../Pages/Login/Login";
 import Register from "../../Pages/Registration/Register";
+import MyReview from "../../Pages/Reviews/MyReview/MyReview";
 import Reviewform from "../../Pages/Reviews/Reviewform/Reviewform";
+import Addservice from "../../Pages/Services/AddService/Addservice";
 import ServiceDetails from "../../Pages/Services/ServiceDetails/ServiceDetails";
 import Services from "../../Pages/Services/Services/Services";
 
@@ -40,6 +42,14 @@ export const router = createBrowserRouter([
                 path : '/reviewcheckout/:id',
                 element : <Reviewform></Reviewform>,
                 loader :({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path:'/myreviews',
+                element:<MyReview></MyReview>
+            },
+            {
+                path : '/Addservice',
+                element:<Addservice></Addservice>
             }
         ]
     }

@@ -48,7 +48,7 @@ const Header = () => {
               user?.email?
               <>
               <Nav.Link href=""><Link to='/myreviews' className='text-black no-underline'>Myreviews</Link></Nav.Link>
-              <Nav.Link href=""><Link to='/myreviews' className='text-black no-underline'>AddService</Link></Nav.Link>
+              <Nav.Link href=""><Link to='/Addservice' className='text-black no-underline'>AddService</Link></Nav.Link>
               <Button variant="outline-dark" onClick={handleLogout}>LogOut</Button>
               </>
               :
