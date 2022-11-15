@@ -4,12 +4,18 @@ import ServiceCard from '../ServiceCard/ServiceCard';
 
 const Services = () => {
     const [services,setServices] = useState([]);
+    const [loading,setloading] = useState(true);
 
     useEffect(()=>{
         fetch('http://localhost:5000/services')
         .then(res=>res.json())
         .then(data=>setServices(data))
+        setloading(false)
+       
     })
+    if(loading){
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-purple-600"></div>
+    }
     return (
         <Container >
             <div>

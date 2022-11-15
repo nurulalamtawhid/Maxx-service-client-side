@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Authcontext } from '../../Context/Authprovider';
 
 const Register = () => {
-    const {createUser} = useContext(Authcontext);
+    const {createUser,loading} = useContext(Authcontext);
     const handleSignUp = event =>{
         event.preventDefault();
         const form = event.target;
@@ -18,6 +18,9 @@ const Register = () => {
         })
         .catch(err => console.error(err));
 
+    }
+    if(loading){
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-purple-600"></div>
     }
     return (
         <section className="p-6  text-gray-900 mt-24">

@@ -6,7 +6,7 @@ import { Authcontext } from '../../Context/Authprovider';
 import {  GoogleAuthProvider } from 'firebase/auth';
 
 const Login = () => {
-    const {login,providerlogin} = useContext(Authcontext);
+    const {login,providerlogin,loading} = useContext(Authcontext);
     const location = useLocation();
     const navigate = useNavigate();
     const from = location.state?.from?.pathname ||'/';
@@ -38,6 +38,9 @@ const Login = () => {
             navigate(from,{replace : true})
         })
         .catch(error => console.error(error))
+    }
+    if(loading){
+        return <div className="w-16 h-16 border-4 border-dashed rounded-full animate-spin border-purple-600"></div>
     }
     return (
         <section className="p-6  text-gray-900 mt-24">
