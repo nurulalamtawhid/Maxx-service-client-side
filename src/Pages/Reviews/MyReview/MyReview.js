@@ -5,14 +5,17 @@ import MyReviewCar from './MyReviewCar';
 
 const MyReview = () => {
     const { user } = useContext(Authcontext);
-    console.log(user);
+   // console.log(user);
     const [reviews, setreviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/review?email=${user.email}`)
+        fetch(`http://localhost:5000/review?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setreviews(data))
     }, [user?.email])
     const handleUpdate = id =>{
+        fetch(`http://localhost:5000/review/${id}`,{
+            method: 'PATCH',
+        })
 
     }
     const handleDelete= id=>{

@@ -48,8 +48,8 @@ const Addservice = () => {
             <form action="" onSubmit={handleAddservice} className="container flex flex-col mx-auto space-y-12  ">
                 <fieldset className="grid grid-cols-4 gap-6 p-6 rounded-md shadow-sm bg-gray-50">
                     <div className="space-y-2 col-span-full lg:col-span-1">
-                        <p className="font-medium">Add Review</p>
-                        <p className="font-medium"> for </p>
+                        <p className="font-medium">Add Service</p>
+                        <p className="font-medium"> Which you need most? </p>
                        
                     </div>
                     <div className="grid grid-cols-6 gap-4 col-span-full lg:col-span-3">

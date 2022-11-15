@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import MyreviewUpdate from '../MyreviewUpdate/MyreviewUpdate';
 
 const MyReviewCar = ({ review, handleDelete ,
     handleUpdate }) => {
@@ -52,7 +54,9 @@ const MyReviewCar = ({ review, handleDelete ,
                 </span>
             </td>
             <th>
-                <button className="btn btn-ghost btn-xs">Edit</button>
+                <button className="btn btn-ghost btn-xs"><Link
+                 to={`/review/${_id}`} className='no-underline text-slate-900'>Edit</Link>
+                 </button>
             </th>
         </tr>
 
