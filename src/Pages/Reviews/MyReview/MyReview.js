@@ -12,12 +12,7 @@ const MyReview = () => {
             .then(res => res.json())
             .then(data => setreviews(data))
     }, [user?.email])
-    const handleUpdate = id =>{
-        fetch(`http://localhost:5000/review/${id}`,{
-            method: 'PATCH',
-        })
-
-    }
+    
     const handleDelete= id=>{
         const proceed = window.confirm('Are you sure to remove the review?')
         if(proceed){
@@ -39,7 +34,10 @@ const MyReview = () => {
 
 
         <Container className='py-8'>
-            <div className="overflow-x-auto w-full">
+           {
+            reviews?.Review?
+            <>
+             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
 
                     <thead className='bg-slate-200'>
@@ -62,8 +60,7 @@ const MyReview = () => {
                                 key={review._id}
                                 review={review}
                                 handleDelete ={handleDelete}
-                                handleUpdate ={handleUpdate}
-
+                               
                             ></MyReviewCar>)
                         }
 
@@ -74,6 +71,11 @@ const MyReview = () => {
 
                 </table>
             </div>
+            </>
+            :
+            <h1 className='text-center text-2xl py-8'>No reviews Added</h1>
+
+           }
         </Container>
 
     );
