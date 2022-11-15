@@ -18,9 +18,9 @@ const ServiceCard = ({service}) => {
                         <h2 className="text-3xl font-semibold tracking-wide">{title}</h2>
                         <p className="text-gray-800">
                             {details.length>100 ?
-                               <p>{details.slice(0,100)+ '...'}<Link to={`/services/${_id}`}>Read more</Link></p>
+                               <>{details.slice(0,100)+ '...'}<Link to={`/services/${_id}`}>Read more</Link></>
                                :
-                               <p>{details}</p>
+                               <>{details}</>
                             }
                             
                             

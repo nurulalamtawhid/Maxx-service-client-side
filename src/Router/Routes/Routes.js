@@ -9,6 +9,7 @@ import Reviewform from "../../Pages/Reviews/Reviewform/Reviewform";
 import Addservice from "../../Pages/Services/AddService/Addservice";
 import ServiceDetails from "../../Pages/Services/ServiceDetails/ServiceDetails";
 import Services from "../../Pages/Services/Services/Services";
+import Privateroutes from "../PrivateRoutes/Privateroutes";
 
 export const router = createBrowserRouter([
     {
@@ -40,16 +41,16 @@ export const router = createBrowserRouter([
             },
             {
                 path : '/reviewcheckout/:id',
-                element : <Reviewform></Reviewform>,
+                element : <Privateroutes><Reviewform></Reviewform></Privateroutes>,
                 loader :({params})=> fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path:'/myreviews',
-                element:<MyReview></MyReview>
+                element:<Privateroutes><MyReview></MyReview></Privateroutes>
             },
             {
                 path : '/Addservice',
-                element:<Addservice></Addservice>
+                element:<Privateroutes><Addservice></Addservice></Privateroutes>
             }
         ]
     }
