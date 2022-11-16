@@ -4,14 +4,14 @@ import { useLoaderData } from 'react-router-dom';
 
 const MyreviewUpdate = () => {
     const reviews = useLoaderData();
-    const { Review,photo,serviceName,Customer,_id
+    const { Review,photo,serviceName,Customer
     } = reviews;
     const [review, setreview] =useState (reviews);
-    console.log(review);
+   
     const handleUpdate = (event) =>{
         event.preventDefault();
         console.log('hiii');
-        fetch(`http://localhost:5000/review/${reviews._id}`,{
+        fetch(`https://max-server.vercel.app/review/${reviews._id}`,{
             method:'PUT',
             headers :{
                 'content-type':'application/json'

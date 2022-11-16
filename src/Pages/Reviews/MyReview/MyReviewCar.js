@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-import MyreviewUpdate from '../MyreviewUpdate/MyreviewUpdate';
 
-const MyReviewCar = ({ review, handleDelete ,
-    handleUpdate }) => {
+
+const MyReviewCar = ({ review, handleDelete 
+     }) => {
     const {_id, serviceName, Customer, Review, email, service } = review;
     const [reviewservice, setreviewservice] = useState();
     useEffect(() => {
-        fetch(`http://localhost:5000/services/${service}`)
+        fetch(`https://max-server.vercel.app/services/${service}`)
             .then(res => res.json())
             .then(data => setreviewservice(data));
     }, [service])

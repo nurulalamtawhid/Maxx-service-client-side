@@ -43,12 +43,12 @@ export const router = createBrowserRouter([
             {
                 path :'/services/:id',
                 element :<ServiceDetails></ServiceDetails>,
-                loader :({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                loader :({params})=> fetch(`https://max-server.vercel.app/services/${params.id}`)
             },
             {
                 path : '/reviewcheckout/:id',
                 element : <Privateroutes><Reviewform></Reviewform></Privateroutes>,
-                loader :({params})=> fetch(`http://localhost:5000/services/${params.id}`)
+                loader :({params})=> fetch(`https://max-server.vercel.app/services/${params.id}`)
             },
             {
                 path:'/myreviews',
@@ -57,7 +57,7 @@ export const router = createBrowserRouter([
             {
                 path:'//review/:id',
                 element:<Privateroutes><MyreviewUpdate></MyreviewUpdate></Privateroutes>,
-                loader :({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+                loader :({params})=> fetch(`https://max-server.vercel.app/review/${params.id}`)
             },
             {
                 path : '/Addservice',

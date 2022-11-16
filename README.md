@@ -7,5 +7,5 @@ its a service for Outdoor entairnment and basic needs  of life such as swimming,
 ##-4 For authentication use google firebase
 ##-5 on the server side i used expressjs,mongodb for database, some middleware for cross platform.environment variable for securtiy issues.
 
-live website link :
-live server link :
+live website link :https://max-client.web.app/
+live server link :https://max-server.vercel.app/

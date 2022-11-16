@@ -10,7 +10,7 @@ const MyReview = () => {
    // console.log(user);
     const [reviews, setreviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/review?email=${user?.email}`)
+        fetch(`https://max-server.vercel.app/review?email=${user?.email}`)
             .then(res => res.json())
             .then(data => setreviews(data))
     }, [user?.email])
@@ -18,7 +18,7 @@ const MyReview = () => {
     const handleDelete= id=>{
         const proceed = window.confirm('Are you sure to remove the review?')
         if(proceed){
-            fetch(`http://localhost:5000/review/${id}`,{
+            fetch(`https://max-server.vercel.app/review/${id}`,{
                 method : 'DELETE'
             })
             .then(res=>res.json())

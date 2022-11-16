@@ -14,7 +14,7 @@ const ServiceDetails = () => {
     const [reviews,setreviews] = useState([]);
     //const [control,setcontrol] = useState(true)
     useEffect(()=>{
-        fetch(`http://localhost:5000/serviceReview/${_id}`)
+        fetch(`https://max-server.vercel.app/serviceReview/${_id}`)
         .then(res=>res.json())
         .then(data=>setreviews(data))
         

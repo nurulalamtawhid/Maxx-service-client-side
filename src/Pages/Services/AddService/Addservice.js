@@ -22,7 +22,7 @@ const Addservice = () => {
             details : details
 
         };
-        fetch('http://localhost:5000/addservices', {
+        fetch('https://max-server.vercel.app/addservices', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

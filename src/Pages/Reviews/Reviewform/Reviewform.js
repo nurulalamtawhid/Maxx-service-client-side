@@ -29,7 +29,7 @@ const Reviewform = () => {
             email
 
         };
-        fetch('http://localhost:5000/reviews', {
+        fetch('https://max-server.vercel.app/reviews', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -51,7 +51,7 @@ const Reviewform = () => {
             
     }
     useEffect(()=>{
-        fetch(`http://localhost:5000/serviceReview/${_id}`)
+        fetch(`https://max-server.vercel.app/serviceReview/${_id}`)
         .then(res=>res.json())
         .then(data=>setreview(data))
         
