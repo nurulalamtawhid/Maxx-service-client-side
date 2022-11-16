@@ -4,8 +4,10 @@ import { FaGoogle  } from 'react-icons/fa';
 import Button from 'react-bootstrap/Button';
 import { Authcontext } from '../../Context/Authprovider';
 import {  GoogleAuthProvider } from 'firebase/auth';
+import Usetitle from '../../Hooks/Usetitle';
 
 const Login = () => {
+    Usetitle('LogIn');
     const {login,providerlogin,loading} = useContext(Authcontext);
     const location = useLocation();
     const navigate = useNavigate();

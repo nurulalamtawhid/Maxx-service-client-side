@@ -19,7 +19,7 @@ const Header = () => {
   }
     return (
         <div>
-    <Navbar collapseOnSelect expand="lg" className='bg-indigo-100' >
+    <Navbar collapseOnSelect expand="lg"  >
       <Container>
         <Navbar.Brand >
         <Link to={'/'}
@@ -56,9 +56,9 @@ const Header = () => {
               </>
               :
               <Nav>
-              <Nav.Link href="" className=''><Link to='/login'>LogIn</Link></Nav.Link>
+              <Nav.Link href="" ><Link to='/login'className='text-black no-underline'>LogIn</Link></Nav.Link>
               <Nav.Link eventKey={2} href="">
-                <Link to ='/register' >SignUp</Link>
+                <Link to ='/register'className='text-black no-underline' >SignUp</Link>
               </Nav.Link>
               </Nav>
             }

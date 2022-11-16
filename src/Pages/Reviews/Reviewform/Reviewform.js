@@ -2,8 +2,10 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { useLoaderData, useNavigate } from 'react-router-dom';
 import { Authcontext } from '../../../Context/Authprovider';
+import Usetitle from '../../../Hooks/Usetitle';
 
 const Reviewform = () => {
+    Usetitle('AddReview');
     const serviceDetails = useLoaderData();
     const navigate = useNavigate();
     const { _id, image_url, title } = serviceDetails;

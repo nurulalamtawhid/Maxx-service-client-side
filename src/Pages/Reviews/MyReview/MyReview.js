@@ -1,9 +1,11 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
 import { Authcontext } from '../../../Context/Authprovider';
+import Usetitle from '../../../Hooks/Usetitle';
 import MyReviewCar from './MyReviewCar';
 
 const MyReview = () => {
+    Usetitle('MyReview');
     const { user } = useContext(Authcontext);
    // console.log(user);
     const [reviews, setreviews] = useState([]);

@@ -3,9 +3,11 @@ import { Button, Container } from 'react-bootstrap';
 import { PhotoProvider, PhotoView } from 'react-photo-view';
 import 'react-photo-view/dist/react-photo-view.css';
 import { Link, useLoaderData } from 'react-router-dom';
+import Usetitle from '../../../Hooks/Usetitle';
 import ReviewCard from '../../Reviews/ReviewCard/ReviewCard';
 
 const ServiceDetails = () => {
+    Usetitle('ServiceDetails');
     const serviceDetails = useLoaderData();
    // console.log(serviceDetails);
     const {_id,image_url,title,details,price} = serviceDetails;

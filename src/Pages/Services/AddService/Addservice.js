@@ -1,8 +1,10 @@
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
+import Usetitle from '../../../Hooks/Usetitle';
 
 const Addservice = () => {
+    Usetitle('Addservice');
     const navigate = useNavigate()
     const handleAddservice =(event)=>{
         event.preventDefault();

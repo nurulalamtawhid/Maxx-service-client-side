@@ -1,10 +1,12 @@
 import React from 'react';
 import { Container } from 'react-bootstrap';
+import Usetitle from '../../Hooks/Usetitle';
 
 const Blog = () => {
+	Usetitle('Blogs')
     return (
        <Container className='py-4'>
-        <section className="bg-gray-100 py-4 text-gray-800">
+        <section className=" py-4 text-gray-800">
 	<div className="container flex flex-col justify-center px-4 py-8 mx-auto md:p-8">
 		<h2 className="text-2xl font-semibold sm:text-4xl">Blog Questionaries</h2>
 		<p className="mt-4 mb-8 text-gray-600">Lets see</p>

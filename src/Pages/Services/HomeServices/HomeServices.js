@@ -13,7 +13,7 @@ const HomeServices = () => {
     return (
         <div>
            <Container>
-           <h1>Home services{services.length}</h1>
+           <h1 className='text-center'> Services</h1>
             <div className='grid gap-2 lg:grid-cols-3 md:grid-cols-2 py-2'>
             {
                 services.map(service =><ServiceCard

@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Container } from 'react-bootstrap';
+import Usetitle from '../../../Hooks/Usetitle';
 import ServiceCard from '../ServiceCard/ServiceCard';
 
 const Services = () => {
     const [services,setServices] = useState([]);
     const [loading,setloading] = useState(true);
+    Usetitle('Services');
 
     useEffect(()=>{
         fetch('http://localhost:5000/services')
